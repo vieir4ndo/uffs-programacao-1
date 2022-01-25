@@ -11,11 +11,10 @@ public class Exe2 {
         DateTime d1 = new DateTime(2, 14, 45, 10);
         System.out.println(d1.toString());
 
-        DateTime d2 = new DateTime(0, 1, 5, 12);
+        DateTime d2 = new DateTime(0, 1, 4, 12);
         System.out.println(d2.toString());
-        d2.addDays(2.5f);
+        d2.addDays(2.5);
         System.out.println(d2.toString());
-
     }
 }
 
@@ -68,11 +67,11 @@ class DateTime {
     }
 
     public static DateTime sum(DateTime d1, DateTime d2) {
-        int sumMinutesD1 = d1.getSecond() + d1.getMinute() * 60 + d1.getHour() * 60 * 60 + d1.getDay() * 60 * 60 * 24;
-        int sumMinutesD2 = d2.getSecond() + d2.getMinute() * 60 + d2.getHour() * 60 * 60 + d1.getDay() * 60 * 60 * 24;
+        int sumMinutesD1 = d1.getSecond() + d1.getMinute() * 60 + d1.getHour() * 60 * 60 + d1.getDay() * 86400;
+        int sumMinutesD2 = d2.getSecond() + d2.getMinute() * 60 + d2.getHour() * 60 * 60 + d2.getDay() * 86400;
 
-        int days = ((sumMinutesD1 + sumMinutesD2)) / (60 * 60 * 24);
-        int hours = (((sumMinutesD1 + sumMinutesD2)) % (60 * 60 * 24)) / (60 * 60);
+        int days = ((sumMinutesD1 + sumMinutesD2)) / (86400);
+        int hours = (((sumMinutesD1 + sumMinutesD2)) % (86400)) / (60 * 60);
         int minutes = ((sumMinutesD1 + sumMinutesD2) % (60 * 60)) / 60;
         int seconds = ((sumMinutesD1 + sumMinutesD2) % (60 * 60)) % 60;
 
@@ -80,11 +79,11 @@ class DateTime {
     }
 
     public static DateTime sub(DateTime d1, DateTime d2) {
-        int sumMinutesD1 = d1.getSecond() + d1.getMinute() * 60 + d1.getHour() * 60 * 60 + d1.getDay() * 60 * 60 * 24;
-        int sumMinutesD2 = d2.getSecond() + d2.getMinute() * 60 + d2.getHour() * 60 * 60 + d1.getDay() * 60 * 60 * 24;
+        int sumMinutesD1 = d1.getSecond() + d1.getMinute() * 60 + d1.getHour() * 60 * 60 + d1.getDay() * 86400;
+        int sumMinutesD2 = d2.getSecond() + d2.getMinute() * 60 + d2.getHour() * 60 * 60 + d1.getDay() * 86400;
 
-        int days = Math.abs(((sumMinutesD1 + sumMinutesD2)) / (60 * 60 * 24));
-        int hours = Math.abs((((sumMinutesD1 + sumMinutesD2)) % (60 * 60 * 24)) / (60 * 60));
+        int days = Math.abs(((sumMinutesD1 + sumMinutesD2)) / (86400));
+        int hours = Math.abs((((sumMinutesD1 + sumMinutesD2)) % (86400)) / (60 * 60));
         int minutes = Math.abs(((sumMinutesD1 - sumMinutesD2) % (60 * 60)) / 60);
         int seconds = Math.abs(((sumMinutesD1 - sumMinutesD2) % (60 * 60)) % 60);
 
@@ -105,21 +104,17 @@ class DateTime {
         return day + ":" + hour + ":" + minute + ":" + second;
     }
 
-    public void addDays(Float days) {
-        int d = Math.abs((Integer.)days);
-        int h = Math.abs(Math.round((days % 1) * 60));
-        int m = Math.abs((Math.round((days % 1) % 60) * 60));
-        int s = Math.abs((Math.round((days % 1) % 60) % 60)) * 60;
-        ;
+    public void addDays(Double days) {
+        int d = (int) Math.floor(days);
 
-        DateTime d1 = new DateTime(d, h, m, s);
+        int h = (int) ((days - d) * 24);
 
-        System.out.println(d1.toString());
+        DateTime d1 = new DateTime(d, h, 0, 0);
 
         DateTime newDateTime = DateTime.sum(this, d1);
 
-        this.setHour(newDateTime.getHour());
         this.setDay(newDateTime.getDay());
+        this.setHour(newDateTime.getHour());
         this.setMinute(newDateTime.getMinute());
         this.setSecond(newDateTime.getSecond());
     }
