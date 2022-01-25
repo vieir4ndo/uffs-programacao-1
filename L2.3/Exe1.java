@@ -22,8 +22,7 @@ seguir. As funcionalidades que seus colegas querem é:
     c) a linha atual que o interpretador está interpretando no momento;
     d) o número de linhas que o interpretador precisa interpretar para finalizar a interpretação do programa atual. 
 As restrições do seu gerente são: 
-    a) usuários do interpretador podem adicionar ou remover variáveis pelo nome delas, mas não podem acessar a
-lista de variáveis diretamente;
+    a) usuários do interpretador podem adicionar ou remover variáveis pelo nome delas, mas não podem acessar a lista de variáveis diretamente;
     b) usuários do interpretador não podem alterar o conteúdo das linhas do programa sendo interpretado;
     c) os usuários do interpretador não podem alterar a linha atual que o interpretador está interpretando.
 */
