@@ -1,0 +1,31 @@
+1) Dadas as classes e interfaces abaixo. A implementação dos métodos das interfaces nas demais classes foi omitida, porém assuma que isso foi feito de forma correta e que o código compila perfeitamente.
+Dado o código abaixo:
+Quais são os tipos legais possíveis que podem ser usados nos locais onde existem as marcas ??1??, ??2??,...,
+??5??? Justifique sua resposta usando um diagrama de hierarquia de classes e uma breve explicação de sua
+conclusão.
+
+class ControladorEntidades {
+    public Entidade findVizinhoDe(Construcao c, ??3?? e) {
+        Entidade v[] = new Entidade[10];
+        Construcao h = c;
+        if(/ omitido /) { 
+            Ferraria f = (Ferraria)h; 
+            v[0] = f;
+        }
+        if(/ omitido /) { 
+            Infantaria i = (Infantaria)e; 
+            v[1] = e;
+        }
+        Unidade u = e; 
+        v[2] = u; 
+        v[3] = c;
+        Arqueiro z = (Arqueiro) u;
+        return v;
+    }
+}
+
+Como 'Construcao h = c', podemos assumir que c é um objeto do tipo Construção. Portanto ??2?? = Construcao
+
+Sobre a variável v sabemos que ela pode receber objetos do tipo Unidade e Construcao. Além disso, ela também pode ser 'cast' como Infantaria e Ferraria. Sabendo que Ferraria e Infantaria herdam Construcao e Unidade respectivamente, e que Construção e Unidade ambos herdam Entidade, v só pode ser do tipo Entidade. Portanto ??1?? = Entidade
+
+Por último, como o objeto u é do tipo Arqueiro, e esse tipo não é herdado por nenhuma classe, deduzimos que ??5?? = Arqueiro.
