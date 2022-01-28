@@ -1,3 +1,4 @@
+
 abstract class Entidade {
     public int x, y;
 
@@ -21,7 +22,7 @@ interface Serializavel {
 }
 
 interface Combativel {
-    public boolean podeCombater(Combativel c)
+    public boolean podeCombater(Combativel c);
 }
 
 class Unidade extends Entidade implements Movel, Atualizavel {
@@ -29,32 +30,26 @@ class Unidade extends Entidade implements Movel, Atualizavel {
     }
 
     public float distanciaBase() {
+        return 2f;
     }
 
     public boolean estahMorta() {
+        return false;
     }
 
-    @Override
     public void atualiza() {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void moveX(int q) {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void moveY(int q) {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void posiciona(int x, int y) {
-        // TODO Auto-generated method stub
 
     }
 }
@@ -63,56 +58,51 @@ class Construcao extends Entidade implements Atualizavel {
     public void produzir() {
     }
 
-    @Override
     public void atualiza() {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void posiciona(int x, int y) {
-        // TODO Auto-generated method stub
 
     }
 }
 
 class Infantaria extends Unidade implements Combativel {
     public void caminha() {
-    };
+    }
 
-    @Override
     public boolean podeCombater(Combativel c) {
-        // TODO Auto-generated method stub
         return false;
     }
 }
 
 class Trabalhador extends Unidade {
     public void executaTarefa() {
-    };
+    }
 }
 
 class Arqueiro extends Infantaria {
     public void atiraFlecha() {
-    };
+    }
 }
 
 class Cavaleiro extends Infantaria {
     public void cavalga() {
-    };
+    }
 }
 
 class Bombeiro extends Infantaria {
     public void explode() {
-    };
+    }
 }
 
 class Ferraria extends Construcao {
     public void carrega() {
-    };
+    }
 }
 
 class Quartel extends Construcao {
     public void treina() {
-    };
+    }
 }
+
