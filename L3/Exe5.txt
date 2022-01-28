@@ -1,0 +1,15 @@
+5) Dadas as classes e interfaces abaixo. A implementação dos métodos das interfaces nas demais classes foi omitida,
+porém assuma que isso foi feito de forma correta e que o código compila perfeitamente.
+Dado o código abaixo:
+
+Quais são os tipos legais possíveis que podem ser usados nos locais onde existem as marcas ????? Justifique sua
+resposta usando um diagrama de hierarquia de classes.
+
+class GerenciarApp {
+    public ???? init(???? a) {
+        Pausavel p = a;
+        return new Thread();
+    }
+}
+
+R: Como o objeto p do tipo Pausavel (interface) recebe a, entende-se que a pode ser de qualquer tipo que implemente Pausavel, logo, a pode ser a class App ou Processo. Já quanto ao retorno da função, sabemos que ele é do tipo Thread, que é uma classe filha de Processo, logo o retorno pode ser definido como ambas as classes Thread ou Processo.

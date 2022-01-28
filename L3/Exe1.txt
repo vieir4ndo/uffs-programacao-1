@@ -24,8 +24,8 @@ class ControladorEntidades {
     }
 }
 
-Como 'Construcao h = c', podemos assumir que c é um objeto do tipo Construção. Portanto ??2?? = Construcao
+Como 'Construcao h = c', podemos assumir que c é um objeto do tipo Construção ou um de seus filhos. Portanto ??2?? = Construcao ou Ferraria ou Quartel
 
 Sobre a variável v sabemos que ela pode receber objetos do tipo Unidade e Construcao. Além disso, ela também pode ser 'cast' como Infantaria e Ferraria. Sabendo que Ferraria e Infantaria herdam Construcao e Unidade respectivamente, e que Construção e Unidade ambos herdam Entidade, v só pode ser do tipo Entidade. Portanto ??1?? = Entidade
 
-Por último, como o objeto u é do tipo Arqueiro, e esse tipo não é herdado por nenhuma classe, deduzimos que ??5?? = Arqueiro.
+Por último, como o objeto u pode ser 'cast' como Arqueiro, e esse tipo não é é filho de Infantaria, que por sua vez herda unidade, deduzimos que ??5?? = Infantaria ou Unidade.
