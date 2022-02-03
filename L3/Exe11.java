@@ -3,7 +3,10 @@
 
 public class Exe11 {
     public static void main(String args[]) {
-
+        Armeiro a = new Armeiro();
+        BatedorRapido b = new BatedorRapido();
+        Inimigo[] i = { a, a, a, a, a, a, a, a, b, b };
+        Service.invocaMetodos(i, b);
     }
 }
 
@@ -27,45 +30,41 @@ interface Nadador {
 
 class Inimigo implements Voador, Corredor, Nadador {
     public void ataca() {
+        System.out.println("Ataca");
     }
 
     public void defende() {
+        System.out.println("Defende");
     }
 
     @Override
     public void nada() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Nada");
     }
 
     @Override
     public void mergulha() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Mergulha");
     }
 
     @Override
     public void corre() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Corre");
     }
 
     @Override
     public void pula() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Pula");
     }
 
     @Override
     public void voa() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Voa");
     }
 
     @Override
     public void pousa() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Pousa");
     }
 }
 
@@ -89,16 +88,19 @@ class NPC implements Corredor {
 
 class Batedor extends Inimigo {
     public void reporta() {
+        System.out.println("Reporta");
     }
 }
 
 class BatedorRapido extends Batedor {
     public void olhadinha() {
+        System.out.println("Olhadinha");
     }
 }
 
 class Armeiro extends Inimigo {
     public void engatilha() {
+        System.out.println("Engatilha");
     }
 }
 
@@ -144,52 +146,48 @@ class Prefeito implements Corredor, Nadador {
 class Service {
     public static void invocaMetodos(Inimigo v[], Inimigo base) {
         Inimigo inimigo = new Inimigo();
-        NPC npc = new NPC();
         Batedor batedor = new Batedor();
         BatedorRapido batedorRapido = new BatedorRapido();
         Armeiro armeiro = new Armeiro();
-        Auxiliar auxiliar = new Auxiliar();
-        Ferreiro ferreiro = new Ferreiro();
-        Prefeito prefeito = new Prefeito();
+        // Auxiliar auxiliar = new Auxiliar();
+        // Ferreiro ferreiro = new Ferreiro();
+        // Prefeito prefeito = new Prefeito();
+        // Não podem ser implementados pois nao são filhos de Inimigo
 
         for (Inimigo item : v) {
-            if (item.getClass() == inimigo.getClass()) {
+            if (base.getClass() == item.getClass()) {
                 chamaMetodosInimigo(item);
+
+                if (item.getClass() == inimigo.getClass()) {
+                    continue;
+                }
+                if (item.getClass() == batedor.getClass()) {
+                    batedor = (Batedor) item;
+                    batedor.reporta();
+                    continue;
+                }
+                if (item.getClass() == batedorRapido.getClass()) {
+                    batedorRapido = (BatedorRapido) item;
+                    batedorRapido.reporta();
+                    batedorRapido.olhadinha();
+                    continue;
+                }
+                if (item.getClass() == armeiro.getClass()) {
+                    armeiro = (Armeiro) item;
+                    armeiro.engatilha();
+                    continue;
+                }
             }
 
-            if (item.getClass() == batedor.getClass()) {
-                chamaMetodosInimigo(item);
-                Batedor b = (Batedor) item;
-                b.reporta();
-            }
-
-            if (item.getClass() == batedorRapido.getClass()) {
-                chamaMetodosInimigo(item);
-                Batedor b = (Batedor) item;
-                b.reporta();
-                BatedorRapido b1 = (BatedorRapido) item;
-                b1.olhadinha();
-            }
-
-            if (item.getClass() == armeiro.getClass()) {
-                chamaMetodosInimigo(item);
-                Armeiro a = (Armeiro) item;
-                item.
-            }
         }
     }
 
-    public static void chamaMetodosInimigo(Inimigo i) {
+    private static void chamaMetodosInimigo(Inimigo i) {
         i.voa();
         i.pousa();
         i.corre();
         i.pula();
         i.nada();
         i.mergulha();
-    }
-
-    public static void chamaMetodosNPC(Inimigo i) {
-        i.corre();
-        i.pula();
     }
 }
