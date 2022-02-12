@@ -1,6 +1,6 @@
-import Proj.br.edu.uffs.cc.pr.entidades.Animal;
-import Proj.br.edu.uffs.cc.pr.entidades.Mamifero;
-import Proj.br.edu.uffs.cc.pr.entidades.racas.Morcego;
+import br.edu.uffs.cc.pr.entidades.Animal;
+import br.edu.uffs.cc.pr.entidades.Mamifero;
+import br.edu.uffs.cc.pr.entidades.racas.Morcego;
 
 public class Main {
     public static void main(String args[]) {

@@ -1,4 +1,4 @@
-package Proj.br.edu.uffs.cc.pr.entidades;
+package br.edu.uffs.cc.pr.entidades;
 
 public class Animal {
     private int idade, tamanho;
