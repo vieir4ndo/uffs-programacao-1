@@ -1,0 +1,39 @@
+Assumindo que a interface Rastreador está no pacote
+br.edu.uffs.cc.pr.habilidades, que a classe
+Animal está no pacote br.edu.uffs.cc.pr.entidades, que as classes Mamifero e
+Morcego estão no pacote
+br.edu.uffs.cc.pr.racas, e que a classe que possui o método main() está no
+pacote br.edu.uffs.cc.pr.
+Além disso considere que o código do seu projeto esteja na pasta Proj.
+
+a. Como seria a estrutura de pastas e arquivos dentro desse diretório Proj
+para que o sistema de pacotes
+funcionasse corretamente?
+Proj
+    br.edu.uffs.cc.pr.habilidades
+        Rastreador
+    br.edu.uffs.cc.pr.entidades
+        br.edu.uffs.cc.pr.racas
+            Morcego
+        Animal
+        Mamifero
+    Main
+
+Fiquei meio confuso, mas entendo que como mamífero é uma abstração ele
+deveria estar junto com animal, uma vez que podemos ter outras raças que nao
+morcego e elas nao necessariamente serão mamíferos. Como todas as racas serão
+tbm entidades entendo que elas podem ficar alocalocada como um subpacote. Com
+relação ao main, entendo que o mesmo não pertence a um pacote e, se
+pertencesse, seria um pacote principal na mesma camada do br.edu.uffs.cc.pr
+
+b. Qual instrução deve ser adicionada no começo do arquivo de cada classe
+para que ela faça parte do pacote?
+Mostre o comando usado para cada uma das classes.
+Main - N.A.
+Rastreador - package br.edu.uffs.cc.pr.habilidades;
+Animal, Mamifero - package br.edu.uffs.cc.pr.entidades;
+Morcego - package br.edu.uffs.cc.pr.entidades.racas;
+
+c. Faça o código completo da classe com o método main()para que ela instancie
+cada uma das classes citadas.
+NA PASTA

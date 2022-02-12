@@ -21,7 +21,7 @@ public class Exe3 {
              * se o código abaixo for executado com
              * valuetendo valor 2? Justifique.
              */
-            // IMPRIME ETHERNET EXCEPTION, pq sim, é o cara que é igual no catch
+            // IMPRIME ETHERNET EXCEPTION, pq essa é a exception disparada no catch
             // int value = 2;
 
             // IMPRIMIRÁ APENAS O FINALLY

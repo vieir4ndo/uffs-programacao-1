@@ -13,7 +13,8 @@ No codigo que eu fiz a saida seria "Comando Mal Formado!", no código inicial, s
 public class Exe2 {
     public static void main(String args[]) {
         // CÓDIGOS COMENTADOS POIS JAVA ACUSA ERRO, primeiro catch nao permitia os dois
-        // na sequencia, e os ultimos dois nunca eram throw no codigo
+        // na catchs da sequencia pois ele era pai, e os ultimos dois nunca eram throw
+        // no codigo, então nao podiam ser usados
         try {
             Gerenciador g = new Gerenciador();
             String s = "";

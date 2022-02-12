@@ -13,7 +13,7 @@ public class Exe1 {
             } catch (EMove a) {
                 System.out.println("Move!");
             } catch (ECaminho a) {
-                // CAI NESSA EXCEÇÃO PQ O J É -2
+                // CAI NESSA EXCEÇÃO PQ O J É -2 e é ela que o analise dispara
                 System.out.println("Caminho!");
             } catch (EGeral a) {
                 System.out.println("Geral!");
